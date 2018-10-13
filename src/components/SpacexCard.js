@@ -14,6 +14,7 @@ const SpacexCard = (props) => {
 	    tentative_max_precision,
 	    details,
 	    rocket,
+      links,
 		} = props.data;
 
 		// function renderContent() {
@@ -23,7 +24,8 @@ const SpacexCard = (props) => {
 	  //     </a>
 	  //   )
 		// }
-	  console.log(props.data);
+
+	  //console.log(props.data);
 
 		return (
 			// <div className="astronomy-card">
@@ -41,7 +43,20 @@ const SpacexCard = (props) => {
 	      <p>is_tentative {is_tentative}</p>
 	      <p>tentative_max_precision: {tentative_max_precision}</p>
 	      <p>rocket_id: {rocket.rocket_id}</p>
+        <p>rocket_name: {rocket.rocket_name}</p>
+        <p>rocket_type: {rocket.rocket_type}</p>
+        <p>first_stage.cores.core: {rocket.first_stage.cores[0].core_serial}</p>
 
+        <a >
+          <img src={links.flickr_images[0]} height="200px" alt="image1"/>
+        </a>
+
+        <a>
+          <img src={links.flickr_images[1]} height="200px" alt="image1"/>
+          <img src={links.flickr_images[2]} height="200px" alt="image1"/>
+          <img src={links.flickr_images[3]} height="200px" alt="image1"/>
+          <img src={links.flickr_images[4]} height="200px" alt="image1"/>
+    	  </a>
 
 				{/* {renderContent()}
 				<p>{explanation}</p>
