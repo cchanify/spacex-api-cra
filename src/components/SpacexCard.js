@@ -3,16 +3,17 @@ import React from 'react';
 
 const SpacexCard = (props) => {
 
-	const { id,
-    name,
-    type,
-    active,
-    crew_capacity,
-    sidewall_angle_deg,
-    orbit_duration_yr,
-    dry_mass_kg,
-    dry_mass_lb,
-    first_flight,
+	const { flight_number,
+    mission_name,
+    mission_id,
+    launch_year,
+    launch_date_unix,
+    launch_date_utc,
+    launch_date_local,
+    is_tentative,
+    tentative_max_precision,
+    details,
+    launch_site: site_id,
 	} = props.data;
 
 	// function renderContent() {
@@ -22,31 +23,29 @@ const SpacexCard = (props) => {
   //     </a>
   //   )
 	// }
-
-
+  console.log(props.data);
 
 	return (
 		// <div className="astronomy-card">
     <div>
 
 			{/* <h6 className="astronomy-title">{capsule_serial}</h6> */}
-      <h4 className="dragon1">{name}</h4>
-      <p>id: {id}</p>
-      <p>type: {type}</p>
-      <p>active: {active}</p>
-      <p>crew_capacity: {crew_capacity}</p>
-      <p>sidewall_angle_deg: {sidewall_angle_deg}</p>
-      <p>orbit_duration_yr: {orbit_duration_yr}</p>
-      <p>dry_mass_kg: {dry_mass_kg}</p>
-      <p>dry_mass_lb: {dry_mass_lb}</p>
-      <p>first_flight: {first_flight}</p>
+      <h4 className="dragon1">{mission_name}</h4>
+      <p>flight_number: {flight_number}</p>
+      <p>details: {details}</p>
+      <p>mission_id: {mission_id}</p>
+      <p>launch_year: {launch_year}</p>
+      <p>launch_date_unix: {launch_date_unix}</p>
+      <p>launch_date_utc: {launch_date_utc}</p>
+      <p>launch_date_local: {launch_date_local}</p>
+      <p>is_tentative {is_tentative}</p>
+      <p>tentative_max_precision: {tentative_max_precision}</p>
+      {/* <p>launch_site.site_name_long: {props.data.launch_site.site_name_long}</p> */}
+
 
 			{/* {renderContent()}
-
 			<p>{explanation}</p>
-
 			<span>{date}, {copyright}</span> */}
-
 		</div>
 	)
 }

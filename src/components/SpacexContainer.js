@@ -8,14 +8,13 @@ class SpacexContainer extends Component {
     super();
 
     this.state = {
-      astronomy: []
+      astronomy: [],
     }
-
   }
 
   componentDidMount() {
     //const API_KEY = 'xbyfEsX7avwpCokxTPgQhCJdUlff52Hk9I9E6S9E';
-    const END_POINT = 'https://api.spacexdata.com/v3/dragons/dragon1';
+    const END_POINT = 'https://api.spacexdata.com/v3/launches/latest';
 
     axios.get(END_POINT)
       .then(response => {
@@ -24,7 +23,7 @@ class SpacexContainer extends Component {
         })
       })
       .catch(error => {
-        console.log(error, 'failed to fetch data')
+        console.log(error, 'failed to fetch data');
       });
   }
 
