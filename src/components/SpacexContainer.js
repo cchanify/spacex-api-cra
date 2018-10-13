@@ -8,7 +8,7 @@ class SpacexContainer extends Component {
     super();
 
     this.state = {
-      astronomy: [],
+      astronomy: null, // to allow displaying data once this gets a value
     }
   }
 
@@ -20,7 +20,7 @@ class SpacexContainer extends Component {
       .then(response => {
         this.setState({
           astronomy: response.data
-        })
+        });
       })
       .catch(error => {
         console.log(error, 'failed to fetch data');
