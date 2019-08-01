@@ -29,11 +29,12 @@ class SpacexContainer extends Component {
 
   render() {
     const { astronomy } = this.state;
-    return (
-      <SpacexCard data={astronomy} />
+    return(
+      <React.Fragment>
+        <SpacexCard data={astronomy} />
+      </React.Fragment>
     )
   }
 }
-
 
 export default SpacexContainer;
